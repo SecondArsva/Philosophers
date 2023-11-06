@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:32:55 by davidga2          #+#    #+#             */
-/*   Updated: 2023/11/04 17:06:43 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:56:03 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,15 @@ void *ft_calloc(size_t count, size_t size)
 	memset(new_allocation, 0, count * size);
 	return (new_allocation);
 }
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
+}
+
 /*
 int	main(void)
 {

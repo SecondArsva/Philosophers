@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 16:39:50 by davidga2          #+#    #+#             */
-/*   Updated: 2023/11/04 17:06:56 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:52:29 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ typedef struct	s_philo
 
 int		ft_atoi(char *str);
 void	*ft_calloc(size_t count, size_t size);
+int		ft_isdigit(int c);
 
 #endif
