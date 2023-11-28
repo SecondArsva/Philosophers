@@ -6,14 +6,14 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 18:26:06 by davidga2          #+#    #+#             */
-/*   Updated: 2023/11/24 00:43:37 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:59:29 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
 // Encapsula los argumentos en la estructura "global" convirtiéndolos en int.
-void	ft_encapsulate_args(int argc, char **argv, t_global **global)
+void	ft_init_global(int argc, char **argv, t_global **global)
 {
 	(*global)->n_philos = ft_atoi(argv[1]);
 	(*global)->time_to_die = ft_atoi(argv[2]);
@@ -58,7 +58,7 @@ int	ft_check_args(int argc, char **argv)
 	{
 		if (ft_check_args_isallnum(argv) != 0)
 			return (printf("philo: invalid arguments\n"), 1);
-/**/		printf("%s %s %s %s %s %s\n",
+/*==*/		printf("%s %s %s %s %s %s\n",
 			argv[0], argv[1], argv[2], argv[3], argv[4], argv[5]);
 	}
 	else
@@ -66,16 +66,17 @@ int	ft_check_args(int argc, char **argv)
 	return (0);
 }
 
-void *ft_routine(void *arg)
+/*
+void	*ft_routine(void *arg)
 {
 	arg = NULL;
 	printf("Hola\n");
 	return (NULL);
 }
-
+*/
 int	ft_philo(t_global *global)
 {
-	size_t				i;
+	size_t			i;
 	pthread_t		*th;
 	pthread_mutex_t	*mutex;
 	int				*death;
@@ -120,7 +121,7 @@ int	main(int argc, char **argv)
 	if (ft_check_args(argc, argv) != 0)
 		return (1);
 	global = malloc(sizeof(t_global));
-	ft_encapsulate_args(argc, argv, &global);
+	ft_init_global(argc, argv, &global);
 	printf("STRUCT:\n%zu\n%zu\n%zu\n%zu\n%zu\n",
 			global->n_philos, global->time_to_die, global->time_to_eat,
 			global->time_to_sleep, global->must_eat);

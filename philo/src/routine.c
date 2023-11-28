@@ -6,15 +6,20 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 23:47:55 by davidga2          #+#    #+#             */
-/*   Updated: 2023/11/24 00:48:55 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:59:30 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
-/*
+
+void	ft_accion(char **)
+{
+	return ;
+}
+
 void	ft_sleep()
 {
-
+	usleep(global->time_to_sleep);
 }
 
 void	ft_think()
@@ -24,40 +29,19 @@ void	ft_think()
 
 void	ft_eat()
 {
-
-}
-
-int		ft_its_death(int time_alive)
-{
-	if (time_alive >= time_to_die)
-		return (kill);
-	else
-		return (0);
 }
 
 void	*ft_routine(void *arg)
 {
-	while (1)
-	{
-		if (ft_its_death() == 0)
-			ft_eat();
-		else
-			break ;
-		if (ft_its_death() == 0)
-			ft_think();
-		else
-			break ;
-		if (ft_its_death() == 0)
-			ft_sleep();
-		else
-			break ;
-	}
-	return (NULL);
-}*/
-
-void *ft_routine(void *arg)
-{
-	arg = null;
-	printf("Hola\n");
+	int	
 	return (NULL);
 }
+
+/*
+void	ft_timestamp_in_ms()
+{
+	printf("", );
+}*/
+
+// ¿puedo coger los tenedores? Los cojo y como. Si no, espero pensando.
+// Termino de comer, dejo los tonedores y me voy a dormir. 
